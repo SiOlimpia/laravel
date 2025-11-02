@@ -18,16 +18,17 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        /* User::factory()->create([
+        User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
-        ]); */
+        ]);
 
         FakerFactory::create()->unique(true);
         $this->call([
             CategorySeeder::class,
             AuthorPublisherBookSeeder::class,
-            ProductSeeder::class
+            ProductSeeder::class,
+            UserBorrowingSeeder::class, 
         ]);
 
     }
