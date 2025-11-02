@@ -15,12 +15,12 @@ class ProductController extends Controller
 
 
 
-public function create()
+    public function create()
     {
         return view('products.create');
     }
 
-public function store(Request $request)
+    public function store(Request $request)
     {   
         // dd($request->all());
         Product::create($request->all());
